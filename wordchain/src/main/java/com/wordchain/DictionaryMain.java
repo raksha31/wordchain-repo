@@ -97,7 +97,6 @@ public class DictionaryMain {
 
                     String newWord = new String(currWord);
 
-                    newWord = newWord.toLowerCase();
                     if (dict.contains(newWord)) {
 
                         //Add current string to queue for comparision
