@@ -65,9 +65,8 @@ public class DictionaryMainTest {
     @Test
     public void findWordChain_equalLengthInput_CaseSensitivity()
     {
-    	String start = "dog";
-    	String end =  "Cat";
-        List<String> actual=dictionaryMain.findWordChain(start.toLowerCase(),end.toLowerCase());
+
+        List<String> actual=dictionaryMain.findWordChain("dog","Cat");
         List<String> expected= Arrays.asList("dog","cat","cog","cag");
         assertTrue(actual.containsAll(expected));
     }

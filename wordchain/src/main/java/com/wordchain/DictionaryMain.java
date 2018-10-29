@@ -12,10 +12,10 @@ public class DictionaryMain {
 
         try {
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-            String startWord = bufferedReader.readLine().toLowerCase();
+            String startWord = bufferedReader.readLine();
             System.out.println("Enter the ending word : ");
 
-            String endWord = bufferedReader.readLine().toLowerCase();
+            String endWord = bufferedReader.readLine();
             List<String> wordChain = new DictionaryMain().findWordChain(startWord, endWord);
 
 
@@ -36,7 +36,8 @@ public class DictionaryMain {
     public ArrayList<String> findWordChain(String start, String end) {
 
         ArrayList<String> result = new ArrayList<>();
-
+        start = start.toLowerCase();
+        end = end.toLowerCase();
         //Handle for empty cases
         if (start.length() == 0 || end.length() == 0) {
 			return result;
@@ -95,6 +96,8 @@ public class DictionaryMain {
                     }
 
                     String newWord = new String(currWord);
+
+                    newWord = newWord.toLowerCase();
                     if (dict.contains(newWord)) {
 
                         //Add current string to queue for comparision
